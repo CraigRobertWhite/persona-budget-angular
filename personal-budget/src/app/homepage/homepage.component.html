@@ -1,1 +1,14 @@
-<p>homepage works!</p>
+<main class="container center" aria-label="Main">
+  <section class="page-area">
+    <pb-article *ngFor="let article of myList"
+                [title]="article.title"
+                [content]="article.content">
+    </pb-article>
+  </section>
+  <section class="page-area">
+    <article>
+      <h1 style="text-align: center;">Budget</h1>
+      <canvas id="budget-chart" width="400" height="400"></canvas>
+    </article>
+  </section>
+</main>
