@@ -10,8 +10,9 @@ app.use((request, response, next) => {
     next();
 });
 
-app.get('/hello', (request, response) => {
-    response.send('Hello World!');
+
+app.get('/articles', (request, response) => {
+    response.json(require('./articles.json'));
 });
 
 app.get('/budget', (request, response) => {

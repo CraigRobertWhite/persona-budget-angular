@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'pb-homepage',
@@ -6,44 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  myList = [
-    {
-      title: 'Stay on track',
-      content: 'Do you know where you are spending your money? If you really stop to track it down, you would get surprised! Proper budget management depends on real data... and this app will help you with that!'
-    },
-    {
-      title: 'Alerts',
-      content: 'What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.'
-    },
-    {
-      title: 'Results',
-      content: 'People who stick to a financial plan, budgeting every expense, get out of debt faster! Also, they to live happier lives... since they expend without guilt or fear... because they know it is all good and accounted for.'
-    },
-    {
-      title: 'Free',
-      content: 'This app is free!!! And you are the only one holding your data!'
-    },
-    {
-      title: 'Stay on track',
-      content: 'Do you know where you are spending your money? If you really stop to track it down, you would get surprised! Proper budget management depends on real data... and this app will help you with that!'
-    },
-    {
-      title: 'Alerts',
-      content: 'What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.'
-    },
-    {
-      title: 'Results',
-      content: 'People who stick to a financial plan, budgeting every expense, get out of debt faster! Also, they to live happier lives... since they expend without guilt or fear... because they know it is all good and accounted for.'
-    },
-    {
-      title: 'Free',
-      content: 'This app is free!!! And you are the only one holding your data!'
-    }
-  ];
+  articles = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get('/articles').subscribe(response => {
+      this.articles = response['articles'];
+    });
   }
-
 }
