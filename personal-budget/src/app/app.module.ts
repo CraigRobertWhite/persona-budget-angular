@@ -12,6 +12,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { Interceptor } from "./http-interceptors/interceptor";
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Interceptor } from "./http-interceptors/interceptor";
     ArticleComponent,
     HomepageComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
